@@ -1,17 +1,20 @@
-docker
-======
-
+# docker
 A set of docker containers, each running a specific task.
+
+## Installation
+```sh
+docker pull yoshuawuyts/<container name>
+```
 
 ## Containers
 ```
 base                       ✔
-├── Node                   ✔
-├── Redis                  ✖
-├── LevelDB                ✖
-├── Haproxy                ✖
-├── Varnish                ✖
-└── Riak                   ✖
+├── node                   ✔
+├── redis                  ✖
+├── levelDB                ✖
+├── haproxy                ✖
+├── varnish                ✖
+└── riak                   ✖
 ```
 
 ## Links
@@ -22,3 +25,5 @@ base                       ✔
 ## License
 [MIT](https://tldrlegal.com/license/mit-license) ©
 [Yoshua Wuyts](yoshuawuyts.com)
+
+[docker-node]: https://registry.hub.docker.com/u/yoshuawuyts/node/
