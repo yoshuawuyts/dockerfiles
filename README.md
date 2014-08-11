@@ -1,17 +1,20 @@
 docker
 ======
 
-Docker configuration
+A set of docker containers, each with a
 
-## Layers
-````
-3: app space
-===============================
-2: development // config
-1: SQLite      // database
-1: nvm & node  // runtime
-0: CoreOS      // hosts docker
-````
+## Containers
+```
+base                       ✔
+├── Node                   ✔
+│   └── Node-application   ✖
+├── Redis                  ✖
+├── LevelDB                ✖
+├── Haproxy                ✖
+├── Varnish                ✖
+└── Riak                   ✖
+```
 
 ## License
-[MIT](https://tldrlegal.com/license/mit-license) © [Yoshua Wuyts](yoshuawuyts.com)
+[MIT](https://tldrlegal.com/license/mit-license) ©
+[Yoshua Wuyts](yoshuawuyts.com)
