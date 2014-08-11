@@ -17,6 +17,7 @@ base                       ✔
 ## Links
 - [Advanced docker volumes](bymichael.com/advanced-docker-volumes.html)
 - [Dockerfile best practices](crosbymichael.com/dockerfile-best-practices-take-2.html)
+- [Modular containers](http://www.offermann.us/2013/12/tiny-docker-pieces-loosely-joined.html)
 
 ## License
 [MIT](https://tldrlegal.com/license/mit-license) ©
