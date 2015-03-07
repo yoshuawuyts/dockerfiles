@@ -1,20 +1,9 @@
-# docker
-A set of docker containers, each running a specific task.
+# dockerfiles
+Various Dockerfiles for different images
 
 ## Installation
 ```sh
 docker pull yoshuawuyts/<container name>
-```
-
-## Containers
-```
-base                       ✔
-├── node                   ✔
-├── redis                  ✖
-├── levelDB                ✖
-├── haproxy                ✖
-├── varnish                ✖
-└── riak                   ✖
 ```
 
 ## See Also
@@ -25,9 +14,7 @@ base                       ✔
 - [mafintosh/dockerfiles](https://github.com/mafintosh/dockerfiles)
 - [jfrazelle/dockerfiles](https://github.com/jfrazelle/dockerfiles)
 
-
 ## License
-[MIT](https://tldrlegal.com/license/mit-license) ©
-[Yoshua Wuyts](yoshuawuyts.com)
+[MIT](https://tldrlegal.com/license/mit-license)
 
 [docker-node]: https://registry.hub.docker.com/u/yoshuawuyts/node/
