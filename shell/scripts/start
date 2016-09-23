@@ -1,0 +1,5 @@
+#!/bin/sh
+
+docker run \
+  -v "$(pwd)"/example.sh:/usr/src/app/cmd.sh \
+  yoshuawuyts/service-shell
