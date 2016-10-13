@@ -1,7 +1,7 @@
-FROM alpine
+FROM buildkite/agent
 MAINTAINER Yoshua Wuyts <yoshuawuyts@gmail.com>
 
-RUN apk add --no-cache python
+RUN apk add --no-cache jq python
 
 ENV \
   GCLOUD_SDK_VERSION="128.0.0" \
@@ -19,4 +19,7 @@ RUN \
   (printf '%s %s' "$GCLOUD_SDK_SHASUM" "$GCLOUD_SDK_FILENAME" | sha1sum -c -) \
   && tar xf "$GCLOUD_SDK_FILENAME"
 
-ENTRYPOINT ["/google-cloud-sdk/bin/gcloud"]
+RUN \
+  sed -i -e 's/true/false/' \
+    /google-cloud-sdk/lib/googlecloudsdk/core/config.json; \
+    /google-cloud-sdk/bin/gcloud components install -q kubectl;
