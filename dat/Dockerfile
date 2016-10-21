@@ -4,5 +4,6 @@ MAINTAINER Yoshua Wuyts <yoshuawuyts@gmail.com>
 RUN apk add --no-cache python make xvfb
 RUN npm i -g --unsafe-perm dat electron-webrtc
 
-EXPOSE [3282,9999]
+EXPOSE 3282/udp
+EXPOSE 9999/udp
 ENTRYPOINT ["dat"]
