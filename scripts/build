@@ -1,16 +1,31 @@
 #!/bin/sh
 
+dirname=$(dirname "$(readlink -f "$0")")
 commit="$(git log --oneline | head -n 1 | awk '{print $1}')"
 date="$(date -Iseconds)"
 user="yoshuawuyts"
 
-run_build () {
+_cp_project () {
+  tmpdir="$(mktemp -d "/tmp/dockerfiles-$1-XXXXX")"
+  sourcedir="$(readlink -f "$dirname/../$1")"
+  cp -r "$sourcedir" "$tmpdir"
+  echo "$tmpdir"
+}
+
+_run_build () {
   docker_projectname="$user/$1"
-  docker build "$1" \
+  docker build . \
     -t "$docker_projectname:latest" \
     -t "$docker_projectname:$commit" \
     --label "date=$date" \
     --label "commit=$commit"
+}
+
+run_build () {
+  tmpdir="$(_cp_project "$1")"
+  cd "$tmpdir/$1" || exit 1
+  _run_build "$1"
+  rm -rf "$tmpdir"
 }
 
 run_build_all () {
